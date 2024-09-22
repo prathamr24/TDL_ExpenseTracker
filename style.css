@@ -1,0 +1,251 @@
+/*@import url();
+* {
+  margin-left: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+}
+body {
+  margin-top: 30%;
+  min-height: 100vh;
+  background: url("background.jpg") no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+#webname img {
+  height: 159px;
+  width: 179px;
+  padding: 4px 12px;
+  margin: 1px 4px;
+}
+#webname p {
+  align-content: center;
+  color: #0d545f;
+}
+
+#webname {
+  display: flex;
+  margin: 0;
+  padding: 0;
+
+  justify-self: center;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.3rem;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  position: relative;
+}
+
+#webname::before {
+  content: "";
+  background-color: #a8d6db;
+  position: absolute;
+  z-index: -1;
+  height: 100%;
+  width: 100%;
+}
+
+#nav {
+  position: relative;
+}
+
+#nav::before {
+  content: "";
+  background-color: #0d545f;
+  position: absolute;
+  z-index: -1;
+  height: 100%;
+  width: 100%;
+}
+
+#nav ul {
+  display: flex;
+  justify-content: center;
+}
+
+#nav li {
+  list-style: none;
+}
+
+#nav ul li a {
+  display: block;
+  border-radius: 9px;
+  text-decoration: none;
+  margin: 4px 20px;
+  padding: 4px 20px;
+  color: white;
+}
+
+#nav ul li a:hover {
+  background-color: white;
+  color: #0d545f;
+}
+
+.content {
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  text-align: center;
+  color: #08434b;
+}
+.content h1 {
+  text-align: justify;
+  font-size: 50px;
+  margin-top: 80px;
+}
+
+.content p {
+  text-align: left;
+  font-size: 25px;
+  margin: 30px auto;
+  font-weight: 100;
+  line-height: 50px;
+}
+
+button {
+  width: 200px;
+  padding: 15px 0;
+  height: 50px;
+  background: black;
+  border: 2px solid #fff;
+  outline: 2px;
+  border: 25px;
+  background-color: black;
+  cursor: pointer;
+  font-size: 40;
+  color: #fff;
+  font-weight: 500;
+  margin-left: 40px;
+  transition: 0.1s;
+}
+button:hover {
+  background: #fff;
+  color: #162938;
+}
+*/
+@import url();
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: url("background.jpg") no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px 60px;
+  background-color: #08434b;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 99;
+}
+
+.logo {
+  font-size: 1.7em;
+  color: #fff;
+  user-select: none;
+}
+
+.navigation a {
+  position: relative;
+  font-size: 1em;
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  margin-left: 40px;
+}
+.navigation a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 100%;
+  height: 3px;
+  background: #fff;
+  border-radius: 5px;
+  transform-origin: right;
+  transform: scaleX(0);
+  transition: transform 0.5s;
+}
+.navigation a:hover::after {
+  transform-origin: left;
+  transform: scaleX(1);
+}
+
+.navigation .btnLogin-popup {
+  width: 130px;
+  height: 50px;
+  background: black;
+  outline: 2px;
+  border: 6px;
+  cursor: pointer;
+  font-size: 1.1em;
+  font-weight: 500;
+  margin-left: 40px;
+}
+.navigation .btnLogin-popup:hover {
+  background: #fff;
+  color: #162938;
+}
+
+.content {
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  text-align: center;
+  color: #08434b;
+}
+.content h1 {
+  text-align: justify;
+  font-size: 50px;
+  margin-top: 80px;
+  margin-left: 100px;
+}
+
+.content p {
+  text-align: left;
+  font-size: 25px;
+  margin: 30px auto;
+  font-weight: 100;
+  line-height: 50px;
+  margin-left: 100px;
+}
+
+button {
+  width: 400px;
+  padding: 15px 0;
+  height: 150px;
+  background: black;
+  border: 2px solid #fff;
+  outline: 2px;
+  border: 25px;
+  background-color: black;
+  cursor: pointer;
+  font-size: 40;
+  color: #fff;
+  font-weight: 500;
+  margin-left: 40px;
+  transition: 0.1s;
+}
+button:hover {
+  background: #fff;
+  color: #162938;
+}

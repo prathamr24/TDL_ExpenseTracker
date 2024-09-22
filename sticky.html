@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sticky Note Web Widget</title>
+  </head>
+  <body>
+    <div>
+      <ul>
+        <li>
+          <a href="#" contenteditable="true">
+            <h2>Title #1</h2>
+            <p>Text Content #1</p>
+          </a>
+        </li>
+        <li>
+          <a href="#" contenteditable="true">
+            <h2>Title #2</h2>
+            <p>Text Content #2</p>
+          </a>
+        </li>
+        <li>
+          <a href="#" contenteditable="true">
+            <h2>Title #3</h2>
+            <p>Text Content #3</p>
+          </a>
+        </li>
+        <li>
+          <a href="#" contenteditable="true">
+            <h2>Title #4</h2>
+            <p>Text Content #4</p>
+          </a>
+        </li>
+        <li>
+          <a href="#" contenteditable="true">
+            <h2>Title #5</h2>
+            <p>Text Content #5</p>
+          </a>
+        </li>
+        <li>
+          <a href="#" contenteditable="true">
+            <h2>Title #6</h2>
+            <p>Text Content #6</p>
+          </a>
+        </li>
+        <li>
+          <a href="#" contenteditable="true">
+            <h2>Title #7</h2>
+            <p>Text Content #7</p>
+          </a>
+        </li>
+        <li>
+          <a href="#" contenteditable="true">
+            <h2>Title #8</h2>
+            <p>Text Content #8</p>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <style>
+      div {
+        margin: 20px auto;
+        width: 100%;
+        border-radius: 40px;
+        font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+        padding: 25px;
+        background: #004651;
+        color: #a8d6db;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+      }
+      body {
+        background-color: #a8d6db;
+        margin: 20%;
+        margin-top: 10%;
+      }
+      h4 {
+        font-weight: bold;
+        font-size: 2rem;
+      }
+      p {
+        /*font-family: 'Reenie Beanie';*/
+        font-size: 2rem;
+      }
+      ul,
+      li {
+        list-style: none;
+      }
+      ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      ul li a {
+        text-decoration: none;
+        color: rgb(255, 255, 255);
+        background: rgb(89, 232, 189);
+        display: block;
+        height: 10em;
+        width: 10em;
+        padding: 1em;
+        box-shadow: 5px 5px 7px rgba(33, 33, 33, 0.7);
+        transition: transform 0.15s linear;
+      }
+      ul li {
+        margin: 1em;
+      }
+      ul li:nth-child(odd) a {
+        transform: rotate(-4deg);
+        position: relative;
+        top: 5px;
+      }
+      ul li:nth-child(even) a {
+        transform: rotate(4deg);
+        position: relative;
+        top: 5px;
+      }
+      ul li:nth-child(3n) a {
+        transform: rotate(-3deg);
+        position: relative;
+        top: -5px;
+      }
+      ul li:nth-child(5n) a {
+        transform: rotate(5deg);
+        position: relative;
+        top: -10px;
+      }
+      ul li a:hover,
+      ul li a:focus {
+        box-shadow: 10px 10px 7px rgba(0, 0, 0, 0.7);
+        transform: scale(1.25);
+        position: relative;
+        z-index: 5;
+      }
+      ul li:nth-child(even) a {
+        position: relative;
+        top: 5px;
+        background: #39858d;
+      }
+      ul li:nth-child(3n) a {
+        position: relative;
+        top: -5px;
+        background: #629ca2;
+      }
+    </style>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const allNotes = document.querySelectorAll("li a");
+
+        allNotes.forEach(function (note, index) {
+          note.addEventListener("keyup", function () {
+            const noteTitle = note.querySelector("h2").textContent;
+            const noteContent = note.querySelector("p").textContent;
+            const itemKey = "list_" + index;
+            const data = {
+              title: noteTitle,
+              content: noteContent,
+            };
+            localStorage.setItem(itemKey, JSON.stringify(data));
+          });
+
+          const data = JSON.parse(localStorage.getItem("list_" + index));
+          if (data !== null) {
+            const noteTitle = data.title;
+            const noteContent = data.content;
+            note.querySelector("h2").textContent = noteTitle;
+            note.querySelector("p").textContent = noteContent;
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
